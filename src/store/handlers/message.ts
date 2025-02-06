@@ -3,8 +3,8 @@ import type {
 	MessageUserReceipt,
 	proto,
 	WAMessageKey,
-} from "@whiskeysockets/baileys";
-import { jidNormalizedUser, toNumber } from "@whiskeysockets/baileys";
+} from "baileys";
+import { jidNormalizedUser, toNumber } from "baileys";
 import type { BaileysEventHandler, MakeTransformedPrisma } from "@/store/types";
 import { transformPrisma } from "@/store/utils";
 import { prisma } from "@/db";

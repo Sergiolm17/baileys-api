@@ -1,10 +1,11 @@
-import makeWASocket, {
+import {
 	DisconnectReason,
 	downloadMediaMessage,
 	isJidBroadcast,
 	makeCacheableSignalKeyStore,
-} from "@whiskeysockets/baileys";
-import type { ConnectionState, SocketConfig, WASocket, proto } from "@whiskeysockets/baileys";
+	makeWASocket,
+} from "baileys";
+import type { ConnectionState, SocketConfig, WASocket, proto } from "baileys";
 import { Store, useSession } from "./store";
 import { prisma } from "./db";
 import type { WebSocket } from "ws";
@@ -153,7 +154,6 @@ export async function createSession(options: createSessionOptions) {
 	const { state, saveCreds } = await useSession(sessionId);
 	const socket = makeWASocket({
 		printQRInTerminal: false,
-		//browser: [process.env.NAME_BOT_BROWSER || "Whatsapp Bot", "Chrome", "3.0"],
 		generateHighQualityLinkPreview: false,
 		...socketConfig,
 		auth: {
@@ -288,7 +288,7 @@ export async function createSession(options: createSessionOptions) {
 
 export function getSessionStatus(session: Session) {
 	const state = ["CONNECTING", "CONNECTED", "DISCONNECTING", "DISCONNECTED"];
-	let status = state[(session.ws as WebSocket).readyState];
+	let status = state[(session.ws as unknown as WebSocket).readyState];
 	status = session.user ? "AUTHENTICATED" : status;
 	return status;
 }

@@ -21,11 +21,14 @@ importers:
         specifier: ^4.1.7
         version: 4.1.7
       '@whiskeysockets/baileys':
-        specifier: ^6.7.6
-        version: 6.7.7(link-preview-js@3.0.5)(qrcode-terminal@0.12.0)
+        specifier: ^6.7.12
+        version: 6.7.12(eslint@8.57.0)(link-preview-js@3.0.5)(qrcode-terminal@0.12.0)(typescript@5.5.4)
       axios:
         specifier: ^1.7.2
         version: 1.7.4
+      baileys:
+        specifier: ^6.7.12
+        version: 6.7.12(eslint@8.57.0)(link-preview-js@3.0.5)(qrcode-terminal@0.12.0)(typescript@5.5.4)
       cors:
         specifier: ^2.8.5
         version: 2.8.5
@@ -477,8 +480,8 @@ packages:
   '@wasm-audio-decoders/ogg-vorbis@0.1.15':
     resolution: {integrity: sha512-skAN3NIrRzMkVouyfyq3gYT/op/K9iutMZr7kr5/9fnIaCnpYdrdbv69X8PZ6y3K2J5zy5KuGno5kzH8yGLOOg==}
 
-  '@whiskeysockets/baileys@6.7.7':
-    resolution: {integrity: sha512-QWF+D/+bxGvh5xvFJUOXeZ0UTgbm6LEUVXeHtDHYL8wCeK2ND5qnbGrOEFC7LJzhnOhaJZA/N0v3SutpH7zKYw==}
+  '@whiskeysockets/baileys@6.7.12':
+    resolution: {integrity: sha512-xyL+efF3FQwWA7GR1y0dzAIiam9ybyMGakKTthbVn6lgfCKN7pZxoRIR1XkDSRofJGDh2mu9hewn6peYxaAWNQ==}
     peerDependencies:
       jimp: ^0.16.1
       link-preview-js: ^3.0.0
@@ -493,6 +496,13 @@ packages:
         optional: true
       sharp:
         optional: true
+
+  '@whiskeysockets/eslint-config@https://codeload.github.com/whiskeysockets/eslint-config/tar.gz/326b55f2842668f4e11f471451c4e39819a0e1bf':
+    resolution: {tarball: https://codeload.github.com/whiskeysockets/eslint-config/tar.gz/326b55f2842668f4e11f471451c4e39819a0e1bf}
+    version: 1.0.0
+    peerDependencies:
+      eslint: '*'
+      typescript: '>=4'
 
   '@whiskeysockets/libsignal-node@https://codeload.github.com/WhiskeySockets/libsignal-node/tar.gz/1bd9275d9e621d2ba899087ebdf548b3a5a4f05e':
     resolution: {tarball: https://codeload.github.com/WhiskeySockets/libsignal-node/tar.gz/1bd9275d9e621d2ba899087ebdf548b3a5a4f05e}
@@ -596,9 +606,6 @@ packages:
   async-lock@1.4.1:
     resolution: {integrity: sha512-Az2ZTpuytrtqENulXwO3GGv1Bztugx6TT37NIo7imr/Qo0gsYiGtSdBa2B6fsXhTpVZDNfu1Qn3pk531e3q+nQ==}
 
-  async@3.2.3:
-    resolution: {integrity: sha512-spZRyzKL5l5BZQrr/6m/SqFdBN0q3OCI0f9rjfBzCMBIP4p75P620rR3gTmaksNOhmzgdxcaxdNfMy6anrbM0g==}
-
   asynckit@0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
 
@@ -623,6 +630,23 @@ packages:
 
   axios@1.7.4:
     resolution: {integrity: sha512-DukmaFRnY6AzAALSH4J2M3k6PkaC+MfaAGdEERRWcC9q3/TWQwLpHR8ZRLKTdQ3aBDL64EdluRDjJqKw+BPZEw==}
+
+  baileys@6.7.12:
+    resolution: {integrity: sha512-9vFmfJ4jDaheNtZdN76B+gEIsNtXrBg/+UEIaNcmsrRCSjugCRunffmw2uUm/ybTEUQfsitis9EGtSpnhOJYNQ==}
+    peerDependencies:
+      jimp: ^0.16.1
+      link-preview-js: ^3.0.0
+      qrcode-terminal: ^0.12.0
+      sharp: ^0.32.6
+    peerDependenciesMeta:
+      jimp:
+        optional: true
+      link-preview-js:
+        optional: true
+      qrcode-terminal:
+        optional: true
+      sharp:
+        optional: true
 
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
@@ -680,8 +704,9 @@ packages:
     resolution: {integrity: sha512-AKcdTnFSWATd5/GCPRxr2ChwIJ85CeyrEyjRHlKxQ56d4XJMGym0uAiKn0xbLOGOl3+yRpOTi484dVCEc5AUzQ==}
     engines: {node: '>=0.10.0'}
 
-  cache-manager@4.0.1:
-    resolution: {integrity: sha512-JWdtjdX8e0e6eMehAZsdJvBMvHn/pVQGYUjgzc1ILFH0vtcffb9R7XIEAqfYgEeaVJVCOSP4+dxCius+ciW0RA==}
+  cache-manager@5.7.6:
+    resolution: {integrity: sha512-wBxnBHjDxF1RXpHCBD6HGvKER003Ts7IIm0CHpggliHzN1RZditb7rXoduE1rplc2DEFYKxhLKgFuchXMJje9w==}
+    engines: {node: '>= 18'}
 
   call-bind@1.0.7:
     resolution: {integrity: sha512-GHTSNSYICQ7scH7sZ+M2rFopRoLh8t2bLSW6BbgrtLsahOIB5iyAVJf9GjWK3cYTDaMj4XdBpM1cA6pIS0Kv2w==}
@@ -1046,6 +1071,11 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
 
+  eslint-plugin-simple-import-sort@12.1.1:
+    resolution: {integrity: sha512-6nuzu4xwQtE3332Uz0to+TxDQYRLTKRESSc2hefVT48Zc8JthmN23Gx9lnYhu0FtkRSL1oxny3kJ2aveVhmOVA==}
+    peerDependencies:
+      eslint: '>=5.0.0'
+
   eslint-scope@7.2.2:
     resolution: {integrity: sha512-dOt21O7lTMhDM+X9mB4GX+DZrZtCUJPL/wlcTqxyrx5IvO0IYtILdtrQGQp+8n5S0gwSVmOf9NQrjMOgfQZlIg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -1086,6 +1116,9 @@ packages:
   event-target-shim@5.0.1:
     resolution: {integrity: sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==}
     engines: {node: '>=6'}
+
+  eventemitter3@5.0.1:
+    resolution: {integrity: sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==}
 
   events@3.3.0:
     resolution: {integrity: sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==}
@@ -1614,10 +1647,6 @@ packages:
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
 
-  lru-cache@7.18.3:
-    resolution: {integrity: sha512-jumlc0BIUrS3qJGgIkWZsyfAM7NCWiBcCDhnd+3NNM5KbBmLTgHVfWBcg6W+rLUsIpzpERPsvwUP7CckAQSOoA==}
-    engines: {node: '>=12'}
-
   make-error@1.3.6:
     resolution: {integrity: sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==}
 
@@ -1965,6 +1994,10 @@ packages:
   process@0.11.10:
     resolution: {integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==}
     engines: {node: '>= 0.6.0'}
+
+  promise-coalesce@1.1.2:
+    resolution: {integrity: sha512-zLaJ9b8hnC564fnJH6NFSOGZYYdzrAJn2JUUIwzoQb32fG2QAakpDNM+CZo1km6keXkRXRM+hml1BFAPVnPkxg==}
+    engines: {node: '>=16'}
 
   protobufjs@6.8.8:
     resolution: {integrity: sha512-AAmHtD5pXgZfi7GMpllpO3q1Xw1OYldr+dMUlAnffGTAhqkg72WdmSY71uKBF/JuyiKs8psYbtKrhi0ASCD8qw==}
@@ -2911,14 +2944,15 @@ snapshots:
       '@wasm-audio-decoders/common': 9.0.5
       codec-parser: 2.4.3
 
-  '@whiskeysockets/baileys@6.7.7(link-preview-js@3.0.5)(qrcode-terminal@0.12.0)':
+  '@whiskeysockets/baileys@6.7.12(eslint@8.57.0)(link-preview-js@3.0.5)(qrcode-terminal@0.12.0)(typescript@5.5.4)':
     dependencies:
       '@adiwajshing/keyed-db': 0.2.4
       '@hapi/boom': 9.1.4
+      '@whiskeysockets/eslint-config': https://codeload.github.com/whiskeysockets/eslint-config/tar.gz/326b55f2842668f4e11f471451c4e39819a0e1bf(eslint@8.57.0)(typescript@5.5.4)
       async-lock: 1.4.1
       audio-decode: 2.2.0
       axios: 1.7.4
-      cache-manager: 4.0.1
+      cache-manager: 5.7.6
       futoin-hkdf: 1.5.3
       libphonenumber-js: 1.11.7
       libsignal: '@whiskeysockets/libsignal-node@https://codeload.github.com/WhiskeySockets/libsignal-node/tar.gz/1bd9275d9e621d2ba899087ebdf548b3a5a4f05e'
@@ -2935,8 +2969,20 @@ snapshots:
     transitivePeerDependencies:
       - bufferutil
       - debug
+      - eslint
       - supports-color
+      - typescript
       - utf-8-validate
+
+  '@whiskeysockets/eslint-config@https://codeload.github.com/whiskeysockets/eslint-config/tar.gz/326b55f2842668f4e11f471451c4e39819a0e1bf(eslint@8.57.0)(typescript@5.5.4)':
+    dependencies:
+      '@typescript-eslint/eslint-plugin': 7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.0)(typescript@5.5.4))(eslint@8.57.0)(typescript@5.5.4)
+      '@typescript-eslint/parser': 7.18.0(eslint@8.57.0)(typescript@5.5.4)
+      eslint: 8.57.0
+      eslint-plugin-simple-import-sort: 12.1.1(eslint@8.57.0)
+      typescript: 5.5.4
+    transitivePeerDependencies:
+      - supports-color
 
   '@whiskeysockets/libsignal-node@https://codeload.github.com/WhiskeySockets/libsignal-node/tar.gz/1bd9275d9e621d2ba899087ebdf548b3a5a4f05e':
     dependencies:
@@ -3021,8 +3067,6 @@ snapshots:
 
   async-lock@1.4.1: {}
 
-  async@3.2.3: {}
-
   asynckit@0.4.0: {}
 
   atob@2.1.2: {}
@@ -3051,6 +3095,36 @@ snapshots:
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
       - debug
+
+  baileys@6.7.12(eslint@8.57.0)(link-preview-js@3.0.5)(qrcode-terminal@0.12.0)(typescript@5.5.4):
+    dependencies:
+      '@adiwajshing/keyed-db': 0.2.4
+      '@hapi/boom': 9.1.4
+      '@whiskeysockets/eslint-config': https://codeload.github.com/whiskeysockets/eslint-config/tar.gz/326b55f2842668f4e11f471451c4e39819a0e1bf(eslint@8.57.0)(typescript@5.5.4)
+      async-lock: 1.4.1
+      audio-decode: 2.2.0
+      axios: 1.7.4
+      cache-manager: 5.7.6
+      futoin-hkdf: 1.5.3
+      libphonenumber-js: 1.11.7
+      libsignal: '@whiskeysockets/libsignal-node@https://codeload.github.com/WhiskeySockets/libsignal-node/tar.gz/1bd9275d9e621d2ba899087ebdf548b3a5a4f05e'
+      lodash: 4.17.21
+      music-metadata: 7.14.0
+      node-cache: 5.1.2
+      pino: 7.11.0
+      protobufjs: 7.4.0
+      uuid: 10.0.0
+      ws: 8.18.0
+    optionalDependencies:
+      link-preview-js: 3.0.5
+      qrcode-terminal: 0.12.0
+    transitivePeerDependencies:
+      - bufferutil
+      - debug
+      - eslint
+      - supports-color
+      - typescript
+      - utf-8-validate
 
   balanced-match@1.0.2: {}
 
@@ -3142,11 +3216,12 @@ snapshots:
       union-value: 1.0.1
       unset-value: 1.0.0
 
-  cache-manager@4.0.1:
+  cache-manager@5.7.6:
     dependencies:
-      async: 3.2.3
+      eventemitter3: 5.0.1
       lodash.clonedeep: 4.5.0
-      lru-cache: 7.18.3
+      lru-cache: 10.4.3
+      promise-coalesce: 1.1.2
 
   call-bind@1.0.7:
     dependencies:
@@ -3519,6 +3594,10 @@ snapshots:
     dependencies:
       eslint: 8.57.0
 
+  eslint-plugin-simple-import-sort@12.1.1(eslint@8.57.0):
+    dependencies:
+      eslint: 8.57.0
+
   eslint-scope@7.2.2:
     dependencies:
       esrecurse: 4.3.0
@@ -3590,6 +3669,8 @@ snapshots:
   etag@1.8.1: {}
 
   event-target-shim@5.0.1: {}
+
+  eventemitter3@5.0.1: {}
 
   events@3.3.0: {}
 
@@ -4163,8 +4244,6 @@ snapshots:
 
   lru-cache@10.4.3: {}
 
-  lru-cache@7.18.3: {}
-
   make-error@1.3.6: {}
 
   map-cache@0.2.2: {}
@@ -4519,6 +4598,8 @@ snapshots:
   process-warning@1.0.0: {}
 
   process@0.11.10: {}
+
+  promise-coalesce@1.1.2: {}
 
   protobufjs@6.8.8:
     dependencies:
